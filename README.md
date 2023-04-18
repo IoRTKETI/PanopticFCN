@@ -10,3 +10,9 @@ $PanopticFCN/
     .
     .
 ```
+
+## Install instructions을 따라서 detectron2 설치
+- (https://detectron2.readthedocs.io/en/latest/tutorials/install.html)
+- detectron2 오픈 소스를 다운로드 받은 후, detectron2 폴더 경로에서 설치 가능
+- Python ≥ 3.7, Pytorch ≥ 1.8 
+- 설치한 라이브리 버전 제공 가능
