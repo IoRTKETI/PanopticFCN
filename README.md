@@ -1,5 +1,6 @@
 # PanopticFCN
 - zip파일을 다운 받은 후 cityscapes 폴더를 생성하여 모든 파일을 해당 폴더로 이동
+
 ```
 $PanopticFCN/
   cityscapes/
@@ -20,8 +21,8 @@ $PanopticFCN/
 ## cityscapes dataset 구조
 - https://github.com/facebookresearch/detectron2/blob/main/datasets/README.md 를 참고하여 다음과 같이 cityscapes 데이터셋의 폴더 구조를 생성하고 cityscapesScripts를 다운로드한 후, createTrainIdLabelImgs.py, createPanopticImgs.py 두 개의 파이썬 파일을 통해 labelTrainIds.png와 cityscapes panoptic dataset을 생성함
 
-![image](https://user-images.githubusercontent.com/122510029/232689934-2467947b-6d00-41e6-8461-2bde1091bf5e.png)
-
 <p align="center">
    <img src="https://user-images.githubusercontent.com/122510029/232689934-2467947b-6d00-41e6-8461-2bde1091bf5e.png"
 </p>
+
+- PanopticFCN 폴더 내에 cityscapes 폴더를 생성하여 다운받은 detectron2 폴더와 cityscapesScripts 폴더를 cityscapes 폴더로 이동함
