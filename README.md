@@ -28,11 +28,16 @@ $PanopticFCN/
 - PanopticFCN 폴더 내에 cityscapes 폴더를 생성하여 다운받은 detectron2 폴더와 cityscapesScripts 폴더를 cityscapes 폴더로 이동함
 
 ### Evaluation (라이브러리 import 경로가 맞지 않는 경우가 있어서 수동으로 맞춰줘야 함)
-- python train.py --config-file configs/cityscapes/PanopticFCN-R50-cityscapes.yaml --num-gpus 8 --eval-only MODEL.WEIGHTS /path/to/model_checkpoint (모델 제공 가능: batch size = 32, max iteration = 65000으로 training 시킨 모델)
+```
+python train.py --config-file configs/cityscapes/PanopticFCN-R50-cityscapes.yaml --num-gpus 8 --eval-only MODEL.WEIGHTS /path/to/model_checkpoint (모델 제공 가능: batch size = 32, max iteration = 65000으로 training 시킨 모델)
+```
   
 ### Visualization
 - https://www.youtube.com/watch?v=Pb3opEFP94U 을 참고하여 결과 이미지를 저장함
-- python /path/to/detectron2/demo/Detector_main.py --config-file configs/cityscapes/PanopticFCN-R50-cityscapes.yaml --eval-only MODEL.WEIGHTS /path/to/model_checkpoint
+
+```
+python /path/to/detectron2/demo/Detector_main.py --config-file configs/cityscapes/PanopticFCN-R50-cityscapes.yaml --eval-only MODEL.WEIGHTS /path/to/model_checkpoint
+```
 
 <p align="center">
    <img src="https://user-images.githubusercontent.com/122510029/232692449-841da0ac-2029-4dc5-b80f-3c649b31f52d.png"
