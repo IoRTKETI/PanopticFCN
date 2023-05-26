@@ -29,8 +29,8 @@ $PanopticFCN/
         - ~ gtFine_instanceIds.png
         - ~ gtFine_labelIds.png
         - ~ gtFine_polygons.json
-    - 이 4가지 파일이 존재할 때 아래 명령어를 실행하면 ~ gtFine_labelTrainIds.png 파일이 생성됨
-        - PanopticFCN/cityscapes 폴더에서 실행해야 함
+    - 이 4가지 파일이 존재할 때 아래 명령어를 실행하면 ~ gtFine_labelTrainIds.png 파일이 생성됨 (PanopticFCN/cityscapes/cityscapesscripts/preparation 폴더에서 실행하기)
+    
     <pre><code>python createTrainIdLabelImgs.py</code></pre>
 
 <p align="center">
