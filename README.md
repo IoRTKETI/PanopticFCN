@@ -23,6 +23,16 @@ $PanopticFCN/
 ## cityscapes dataset 구조
 - https://github.com/facebookresearch/detectron2/blob/main/datasets/README.md 를 참고하여 다음과 같이 cityscapes 데이터셋의 폴더 구조를 생성하고 cityscapesScripts를 다운로드한 후, createTrainIdLabelImgs.py, createPanopticImgs.py 두 개의 파이썬 파일을 통해 labelTrainIds.png와 cityscapes panoptic dataset을 생성함
 
+- cityscapes dataset (원본)
+    - gtFine 폴더 내에 총 4가지 파일이 존재
+        - ~ gtFine_color.png
+        - ~ gtFine_instanceIds.png
+        - ~ gtFine_labelIds.png
+        - ~ gtFine_polygons.json
+    - 이 4가지 파일이 존재할 때 아래 명령어를 실행하면 ~ gtFine_labelTrainIds.png 파일이 생성됨
+        - PanopticFCN/cityscapes 폴더에서 실행해야 함
+    <pre><code>python createTrainIdLabelImgs.py</code></pre>
+
 <p align="center">
    <img src="https://user-images.githubusercontent.com/122510029/232689934-2467947b-6d00-41e6-8461-2bde1091bf5e.png"
 </p>
