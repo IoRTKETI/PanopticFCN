@@ -18,7 +18,7 @@ $PanopticFCN/
 - Python ≥ 3.7, Pytorch ≥ 1.8 
 - 설치한 라이브리 버전 제공 가능
 
-- 현재 detectron2가 다운받아져 있으니 **tools_d2_cityscapes 폴더에서** <pre><code>{python -m pip install -e detectron2}</code></pre> 명령어로 **detectron2 설치** 하면 됨
+- 현재 detectron2가 다운받아져 있으니 **tools_d2_cityscapes 폴더에서** 아래 명령어로 **detectron2 설치** 하면 됨 <pre><code>{python -m pip install -e detectron2}</code></pre> 
 
 ## cityscapes dataset 구조
 - https://github.com/facebookresearch/detectron2/blob/main/datasets/README.md 를 참고하여 다음과 같이 cityscapes 데이터셋의 폴더 구조를 생성하고 cityscapesScripts를 다운로드한 후, createTrainIdLabelImgs.py, createPanopticImgs.py 두 개의 파이썬 파일을 통해 labelTrainIds.png와 cityscapes panoptic dataset을 생성함
