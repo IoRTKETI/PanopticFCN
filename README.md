@@ -35,10 +35,6 @@ $PanopticFCN/
     
     <pre><code>python createTrainIdLabelImgs.py</code></pre>
 
-
-
-- PanopticFCN 폴더 내에 cityscapes 폴더를 생성하여 다운받은 detectron2 폴더와 cityscapesScripts 폴더를 cityscapes 폴더로 이동함
-
 ## Evaluation (라이브러리 import 경로가 맞지 않는 경우가 있어서 수동으로 맞춰줘야 함)
 - (모델 제공 가능: batch size = 32, max iteration = 65000으로 training 시킨 모델)
   
