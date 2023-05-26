@@ -61,3 +61,9 @@ python /path/to/detectron2/demo/Detector_main.py --config-file configs/cityscape
 ```
 python train.py --config-file configs/cityscapes/PanopticFCN-R50-cityscapes.yaml --num-gpus 8
 ```
+
+## Test
+tools_d2cityscapes 폴더에서 실행
+```
+python detectron2/demo/test.py --input datasets/cityscapes/leftImg8bit/val/your_dataset_folder/*.jpg --output output/your_output_folder --opts MODEL.WEIGHTS output/model_final_65000.pth
+```
