@@ -7,6 +7,7 @@ import cv2
 import torch
 
 import datetime #HM
+from fvcore.common.timer import Timer #HM
 
 from detectron2.data import MetadataCatalog
 from detectron2.engine.defaults import DefaultPredictor
@@ -35,6 +36,8 @@ class VisualizationDemo(object):
             self.predictor = AsyncPredictor(cfg, num_gpus=num_gpu)
         else:
             self.predictor = DefaultPredictor(cfg)
+
+        self.timer = Timer() #HM
 
     def run_on_image(self, image):
         """
@@ -137,6 +140,12 @@ class VisualizationDemo(object):
         else:
             for frame in frame_gen:
                 yield process_predictions(frame, self.predictor(frame))
+
+    def pause_timers(self): #HM
+        self.timer.pause()
+
+    def resume_timers(self): #HM
+        self.timer.resume()
 
 
 class AsyncPredictor:
