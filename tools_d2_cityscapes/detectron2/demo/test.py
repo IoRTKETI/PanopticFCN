@@ -16,14 +16,17 @@ from detectron2.utils.logger import setup_logger
 
 from predictor import VisualizationDemo
 
+from detectron2.data import MetadataCatalog, DatasetCatalog #HM
+
+# import importlib
+# from detectron2.demo.predictor import VisualizationDemo
+# importlib.reload(VisualizationDemo)
+# print(VisualizationDemo.__file__)
+
 import sys #HM
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))))) #HM
 
-from panopticfcn import *
-
 from panopticfcn.config import add_panopticfcn_config # noqa
-
-from data.cityscapes.cityscapes_panoptic_separated import * #HM 23.03.21
 
 # constants
 WINDOW_NAME = "COCO detections"
@@ -35,7 +38,17 @@ def setup_cfg(args):
     # To use demo for Panoptic-DeepLab, please uncomment the following two lines.
     # from detectron2.projects.panoptic_deeplab import add_panoptic_deeplab_config  # noqa
     # add_panoptic_deeplab_config(cfg)
-    add_panopticfcn_config(cfg) #HM
+    add_panopticfcn_config(cfg) #HM    
+
+    MetadataCatalog.get("cityscapes_fine_panoptic_train_separated").thing_classes = ["person", "rider", "car", "truck", "bus", "train", "motorcycle", "bicycle"]
+    MetadataCatalog.get("cityscapes_fine_panoptic_train_separated").set(thing_train_id2contiguous_id={ 0: 11, 1: 12, 2: 13, 3: 14, 4: 15, 5: 16, 6: 17, 7: 18 })
+    MetadataCatalog.get("cityscapes_fine_panoptic_train_separated").stuff_classes = ["road", "sidewalk", "building", "wall", "fence", "pole", "traffic light", "traffic sign", "vegetation", "terrain", "sky", "person", "rider", "car", "truck", "bus", "train", "motorcycle", "bicycle"]
+    MetadataCatalog.get("cityscapes_fine_panoptic_train_separated").set(stuff_train_id2contiguous_id={ 0: 0, 1: 2, 2: 3, 3: 4, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18 })
+    MetadataCatalog.get("cityscapes_fine_panoptic_val_separated").thing_classes = ["person", "rider", "car", "truck", "bus", "train", "motorcycle", "bicycle"]
+    MetadataCatalog.get("cityscapes_fine_panoptic_val_separated").set(thing_val_id2contiguous_id={ 0: 24, 1: 25, 2: 26, 3: 27, 4: 28, 5: 31, 6: 32, 7: 33 })
+    MetadataCatalog.get("cityscapes_fine_panoptic_val_separated").stuff_classes = ["road", "sidewalk", "building", "wall", "fence", "pole", "traffic light", "traffic sign", "vegetation", "terrain", "sky", "person", "rider", "car", "truck", "bus", "train", "motorcycle", "bicycle"]
+    MetadataCatalog.get("cityscapes_fine_panoptic_val_separated").set(stuff_val_id2contiguous_id={ 0: 0, 1: 2, 2: 3, 3: 4, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18 })
+    
     cfg.merge_from_file(args.config_file)
     cfg.merge_from_list(args.opts)
     # Set score_threshold for builtin models
@@ -50,7 +63,7 @@ def get_parser():
     parser = argparse.ArgumentParser(description="Detectron2 demo for builtin configs")
     parser.add_argument(
         "--config-file",
-        default="configs/quick_schedules/mask_rcnn_R_50_FPN_inference_acc_test.yaml",
+        default="configs/cityscapes/PanopticFCN-R50-cityscapes.yaml",
         metavar="FILE",
         help="path to config file",
     )
