@@ -1,5 +1,6 @@
 # PanopticFCN
 - **zip파일을 다운 받은 후 cityscapes 폴더를 생성하여 모든 파일을 해당 폴더로 이동**
+- 아래의 트리 구조와 같이 폴더를 정리해주세요.
 
 ```
 $PanopticFCN/
