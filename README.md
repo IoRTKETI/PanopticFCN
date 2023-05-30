@@ -15,7 +15,7 @@ $PanopticFCN/
 
 ## Install instructions을 따라서 detectron2 설치
 - (https://detectron2.readthedocs.io/en/latest/tutorials/install.html)
-- **Python ≥ 3.7, Pytorch ≥ 1.8** -- 버전이 매우 중요합니다.
+- **Python ≥ 3.7, Pytorch ≥ 1.8** → 버전이 매우 중요합니다.
 - 현재 detectron2가 다운받아져 있으니 **tools_d2_cityscapes 폴더에서** 아래 명령어로 **detectron2 설치** 하면 됩니다.
 
 <pre><code>python -m pip install -e detectron2</code></pre> 
