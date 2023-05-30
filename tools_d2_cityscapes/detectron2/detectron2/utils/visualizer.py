@@ -1,4 +1,3 @@
-
 # Copyright (c) Facebook, Inc. and its affiliates.
 import colorsys
 import logging
@@ -241,8 +240,11 @@ def _create_text_labels(classes, scores, class_names, is_crowd=None):
     """
     labels = None
     if classes is not None:
-        if class_names is not None and len(class_names) > 0:
-            labels = [class_names[i] for i in classes]
+        class_test = ["road", "sidewalk", "building", "wall", "fence", "pole", "traffic light", "traffic sign", "vegetation", "terrain", "sky", "person", "rider", "car", "truck", "bus", "train", "motorcycle", "bicycle"] #HM
+        # if class_names is not None and len(class_names) > 0: #original
+        if class_names is not None and len(class_test) > 0: #HM
+            # labels = [class_names[i] for i in classes] #original
+            labels = [class_test[i] for i in classes] #HM
         else:
             labels = [str(i) for i in classes]
     if scores is not None:
@@ -493,13 +495,14 @@ class Visualizer:
 
         # draw mask for all semantic segments first i.e. "stuff"
         for mask, sinfo in pred.semantic_masks():
-            category_idx = sinfo["category_id"]
+            category_idx = sinfo["category_id"] #original
+            # category_idx = sinfo["id"] #HM
             try:
                 mask_color = [x / 255 for x in self.metadata.stuff_colors[category_idx]]
             except AttributeError:
                 mask_color = None
 
-            text = self.metadata.stuff_classes[category_idx]
+            text = self.metadata.stuff_classes[category_idx] #original
             self.draw_binary_mask(
                 mask,
                 color=mask_color,
@@ -538,7 +541,7 @@ class Visualizer:
 
     def draw_dataset_dict(self, dic):
         """
-        Draw annotations/segmentaions in Detectron2 Dataset format.
+        Draw annotations/segmentations in Detectron2 Dataset format.
 
         Args:
             dic (dict): annotation/segmentation data of one image, in Detectron2 Dataset format.
@@ -1201,7 +1204,7 @@ class Visualizer:
         modified_lightness = 0.0 if modified_lightness < 0.0 else modified_lightness
         modified_lightness = 1.0 if modified_lightness > 1.0 else modified_lightness
         modified_color = colorsys.hls_to_rgb(polygon_color[0], modified_lightness, polygon_color[2])
-        return modified_color
+        return tuple(np.clip(modified_color, 0.0, 1.0))
 
     def _convert_boxes(self, boxes):
         """
