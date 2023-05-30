@@ -308,15 +308,17 @@ def evaluatePanoptic(gt_json_file, gt_folder, pred_json_file, pred_folder, resul
 # The main method
 def main():
     cityscapesPath = os.environ.get(
-        'CITYSCAPES_DATASET', os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','..')
+        'CITYSCAPES_DATASET', os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','..','tools_d2_cityscapes','datasets','cityscapes') #HM
     )
-    gtJsonFile = os.path.join(cityscapesPath, "gtFine", "cityscapes_panoptic_val.json")
+    # gtJsonFile = os.path.join(cityscapesPath, "gtFine", "cityscapes_panoptic_val.json")
+    gtJsonFile = os.path.join(cityscapesPath, "gtFine", "cityscapes_panoptic_train.json") #HM
 
     predictionPath = os.environ.get(
         'CITYSCAPES_RESULTS',
         os.path.join(cityscapesPath, "results")
     )
-    predictionJsonFile = os.path.join(predictionPath, "cityscapes_panoptic_val.json")
+    # predictionJsonFile = os.path.join(predictionPath, "cityscapes_panoptic_val.json")
+    predictionJsonFile = os.path.join(predictionPath, "cityscapes_panoptic_train.json") #HM
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--gt-json-file",

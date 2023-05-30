@@ -1157,7 +1157,8 @@ def main():
         'CITYSCAPES_DATASET', os.path.join(
             os.path.dirname(os.path.realpath(__file__)), '..', '..')
     )
-    gtFolder = os.path.join(cityscapesPath, "gtBbox3d", "val")
+    # gtFolder = os.path.join(cityscapesPath, "gtBbox3d", "val")
+    gtFolder = os.path.join(cityscapesPath, "gtBbox3d", "train") #HM
 
     predictionPath = os.environ.get(
         'CITYSCAPES_RESULTS',

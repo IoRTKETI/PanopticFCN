@@ -371,7 +371,6 @@ def evaluateMatches(matches, args):
 
     # AP
     overlaps  = args.overlaps
-    # region size
     minRegionSizes = args.minRegionSizes
     # distance thresholds
     distThs   = args.distanceThs

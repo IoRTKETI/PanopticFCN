@@ -130,8 +130,8 @@ if 'CITYSCAPES_EXPORT_DIR' in os.environ:
 else:
     args.exportFile = os.path.join(args.cityscapesPath, "evaluationResults", "resultPixelLevelSemanticLabeling.json")
 # Parameters that should be modified by user
-# args.groundTruthSearch  = os.path.join( args.cityscapesPath , "gtFine" , "val" , "*", "*_gtFine_labelIds.png" )
-args.groundTruthSearch  = os.path.join( args.cityscapesPath , "gtFine" , "train" , "*", "*_gtFine_labelIds.png" ) #HM
+args.groundTruthSearch  = os.path.join( args.cityscapesPath , "gtFine" , "val" , "*", "*_gtFine_labelIds.png" )
+
 
 # Remaining params
 args.evalInstLevelScore = True
