@@ -554,7 +554,7 @@ class PanopticFCN(nn.Module):
                 if stuff_label == 0:  # 0 is a special "thing" class
                     continue
             if self.cfg.MODEL.POSITION_HEAD.STUFF.ALL_CLASSES:
-                if category_id in self.meta.thing_train_id2contiguous_id.values():
+                if category_id in self.meta.thing_train_id2contiguous_id.values(): 
                     continue
             mask = (stuff_results == stuff_label) & (panoptic_seg == 0)
             mask_area = mask.sum()
