@@ -110,6 +110,7 @@ class Metadata(types.SimpleNamespace):
         "class_names": "thing_classes",
         "dataset_id_to_contiguous_id": "thing_dataset_id_to_contiguous_id",
         "stuff_class_names": "stuff_classes",
+        "cityscapes_fine_panoptic_train_separated": "thing_train_id2contiguous_id" #HM
     }
 
     def __getattr__(self, key):
