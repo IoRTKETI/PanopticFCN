@@ -29,7 +29,7 @@ python train.py --config-file configs/cityscapes/PanopticFCN-R50-cityscapes.yaml
 ## Test
 **tools_d2_cityscapes** 폴더에서 실행
 ```
-python detectron2/demo/test.py --input datasets/cityscapes/leftImg8bit/val/your_dataset_folder/*.jpg --output output/your_output_folder --opts MODEL.WEIGHTS output/model_final_65000.pth
+python test.py --input datasets/cityscapes/leftImg8bit/val/your_dataset_folder/*.jpg --output output/your_output_folder --opts MODEL.WEIGHTS output/model_final_65000.pth
 ```
 
 - model_final_65000.pth 파일은 제공 가능합니다.
