@@ -202,7 +202,9 @@ KEYPOINT_CONNECTION_RULES = [
 
 # All Cityscapes categories, together with their nice-looking visualization colors
 # It's from https://github.com/mcordts/cityscapesScripts/blob/master/cityscapesscripts/helpers/labels.py  # noqa
+
 CITYSCAPES_CATEGORIES = [
+    {"color": (128, 64, 128), "isthing": 0, "id": 0, "trainId":22, "name": "unlabeled"},
     {"color": (128, 64, 128), "isthing": 0, "id": 7, "trainId": 0, "name": "road"},
     {"color": (244, 35, 232), "isthing": 0, "id": 8, "trainId": 1, "name": "sidewalk"},
     {"color": (70, 70, 70), "isthing": 0, "id": 11, "trainId": 2, "name": "building"},
@@ -222,6 +224,9 @@ CITYSCAPES_CATEGORIES = [
     {"color": (0, 80, 100), "isthing": 1, "id": 31, "trainId": 16, "name": "train"},
     {"color": (0, 0, 230), "isthing": 1, "id": 32, "trainId": 17, "name": "motorcycle"},
     {"color": (119, 11, 32), "isthing": 1, "id": 33, "trainId": 18, "name": "bicycle"},
+    {"color": ( 13,208,131), "isthing": 1, "id": 36, "trainId": 19, "name": "huge truck"},
+    {"color": (170, 60, 10), "isthing": 0, "id": 37, "trainId": 20, "name": "gas storage"},
+    {"color": (230,180, 70), "isthing": 0, "id": 38, "trainId": 21, "name": "hazard storage"},
 ]
 
 # fmt: off
